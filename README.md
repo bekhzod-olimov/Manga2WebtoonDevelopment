@@ -8,12 +8,15 @@ This repository contains a deep learning (DL)-based artificial intelligence (AI)
 # These are the steps to use this repository:
 
 1. Clone the repository:
+
 `git clone https://github.com/bekhzod-olimov/Manga2WebtoonDevelopment.git`
 `cd Manga2WebtoonDevelopment`
 
 2. Create conda environment and activate it using the following script:
+   
 `conda create -n ENV_NAME python=3.10`
 `conda activate ENV_NAME`
 
 3. Install dependencies using the following script:
+
 `pip install -r requirements.txt`

@@ -11,7 +11,7 @@ sys.path.append(os.getcwd())
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ COLORIZATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ColorizationModel:
-    def __init__(self, root = "/home/ubuntu/workspace/bekhzod/webtoon_dev/AttentionedDeepPaint", device = "cuda:0", resize = (512, 512)):
+    def __init__(self, device = "cuda:0", resize = (512, 512)):
         
         self.device, self.resize = device, resize
         self.style_model = load_colorization_model(checkpoint_path = f"./ckpts/colorization/best.tar", device = self.device)
@@ -54,8 +54,9 @@ class ColorizationModel:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DETECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class DetectionModel():
-    def __init__(self, root = "/home/ubuntu/workspace/bekhzod/webtoon_dev"):
-        sys.path.append(root)
+    # def __init__(self, root = "/home/ubuntu/workspace/bekhzod/webtoon_dev"):
+    #     sys.path.append(root)
+    def __init__(self):
         cfg = get_cfg()
         cfg_save_path, weights_path = load_det_seg_model()
         cfg.merge_from_file(cfg_save_path)

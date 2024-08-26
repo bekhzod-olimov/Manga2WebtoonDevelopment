@@ -5,9 +5,15 @@ This repository contains a deep learning (DL)-based artificial intelligence (AI)
 * Generative Adversarial Networks    - [Attentioned Deep Paint](https://github.com/ktaebum/AttentionedDeepPaint) is used to colorize grayscale manga images;
 * Optical Character Recognition      - [EasyOCR](https://github.com/JaidedAI/EasyOCR) is used to read the contents of the speech balloons.
 
-This repository is to develop an AI Model to transform Manga (Japanese Comic Pages) to Webtoon (Korean Animation).
-
-These are the steps to use this repository:
+# These are the steps to use this repository:
 
 1. Clone the repository:
 `git clone https://github.com/bekhzod-olimov/Manga2WebtoonDevelopment.git`
+`cd Manga2WebtoonDevelopment`
+
+2. Create conda environment and activate it using the following script:
+`conda create -n ENV_NAME python=3.10`
+`conda activate ENV_NAME`
+
+3. Install dependencies using the following script:
+`pip install -r requirements.txt`

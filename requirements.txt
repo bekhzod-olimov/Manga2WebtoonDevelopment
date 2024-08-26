@@ -1,0 +1,24 @@
+torch
+torchvision
+pytorch-lightning
+wandb
+torchaudio
+matplotlib
+openpyxl
+torchmetrics
+pandas
+ipykernel 
+ipywidgets
+opencv-python
+fvcore
+pycocotools
+cloudpickle
+omegaconf
+streamlit
+streamlit_drawable_canvas
+streamlit_option_menu
+streamlit_image_select
+# OCR # 
+python-bidi
+scipy==1.14.1
+scikit-image==0.24.0

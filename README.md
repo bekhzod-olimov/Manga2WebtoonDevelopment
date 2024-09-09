@@ -30,4 +30,5 @@ Train code is going to be available soon. All models in the system are trained u
 4. Run demo using the following script:
 
 `streamlit run demo.py`
+
 Please note that it will take considerable amount of time when the script is run for the first time. Because all tasks in the system (segmentation, detection, colorization) pretrained AI models' weights need to be downloaded.

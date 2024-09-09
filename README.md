@@ -19,6 +19,10 @@ This repository contains a deep learning (DL)-based artificial intelligence (AI)
 
 `conda activate ENV_NAME`
 
+(if necessary) add the created virtual environment to the jupyter notebook (helps with debugging)
+
+`python -m ipykernel install --user --name ENV_NAME --display-name ENV_NAME`
+
 3. Install dependencies using the following script:
 
 `pip install -r requirements.txt`

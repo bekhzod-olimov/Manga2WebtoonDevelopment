@@ -1,16 +1,14 @@
+import numpy as np, cv2, os
 from PIL import Image
 from glob import glob
 from tqdm import tqdm
 from datetime import datetime
-import cv2, os
-import numpy as np
 from matplotlib import pyplot as plt
 from st_server_libs.segmodel import Seg_model
 
 s_model = Seg_model()
 data_path = "/mnt/data/webtoon/Manga109_released_2023_12_07/images"
 save_path = "./manga512"
-# save_path = "/mnt/data/webtoon/manga512"
 
 def make_data(data_path, save_path, model, resize = None):
     

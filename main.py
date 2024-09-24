@@ -1,14 +1,9 @@
-import pandas as pd
-from PIL import Image,ImageDraw,ImageOps
-import streamlit as st
+# Import libraries
+from PIL import Image,ImageDraw,ImageOps 
 from streamlit_drawable_canvas import st_canvas
 from streamlit_option_menu import option_menu
-import uuid
-import json
-import requests
-import os 
-import cv2
-import numpy as np
+import streamlit as st, pandas as pd, numpy as np, uuid, json, requests, os, cv2, 
+
 st.set_page_config(layout="wide")
 
 def check_imgsize(img):

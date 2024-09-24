@@ -1,8 +1,7 @@
+# Import libraries
 import numpy as np, cv2, os
-from PIL import Image
-from glob import glob
-from tqdm import tqdm
-from datetime import datetime
+from PIL import Image; from datetime import datetime
+from glob import glob; from tqdm import tqdm
 from matplotlib import pyplot as plt
 from st_server_libs.segmodel import Seg_model
 

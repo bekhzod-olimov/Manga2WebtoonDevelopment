@@ -1,3 +1,4 @@
+# Import libraries
 import sys, os, cv2, torch, json, easyocr, requests, uuid, time, torchvision.transforms as transforms, numpy as np
 import AttentionedDeepPaint.colorgram.colorgram as cgm
 from AttentionedDeepPaint.preprocess import re_scale, make_colorgram_tensor, scale

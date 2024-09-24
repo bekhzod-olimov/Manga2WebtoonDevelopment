@@ -2,7 +2,7 @@
 from PIL import Image,ImageDraw,ImageOps 
 from streamlit_drawable_canvas import st_canvas
 from streamlit_option_menu import option_menu
-import streamlit as st, pandas as pd, numpy as np, uuid, json, requests, os, cv2, 
+import streamlit as st, pandas as pd, numpy as np, uuid, json, requests, os, cv2, time
 
 st.set_page_config(layout="wide")
 
@@ -173,7 +173,6 @@ def page_colorization(state):
                 st.image(fake_img)
     else:
         st.warning('⚠ Please upload your Image! 😯')
-import time
 def main():
     # print_lst = ["Labeling", 'Inpainting','colorization']
     print_lst = ["Labeling", 'colorization']
@@ -199,5 +198,3 @@ def main():
     #     st.write('ok')
     
 main()
-
-

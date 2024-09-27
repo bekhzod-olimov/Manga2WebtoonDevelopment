@@ -1,14 +1,6 @@
-"""
-Improvement of DeepPaint With Residual Block
-"""
-
-import torch
-import torch.nn as nn
-
+import torch, torch.nn as nn
 from AttentionedDeepPaint.models.attention import AttentionBlock
-
 Norm = nn.BatchNorm2d
-
 
 class DeepUNetPaintGenerator(nn.Module):
     """

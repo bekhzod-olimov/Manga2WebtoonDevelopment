@@ -91,46 +91,34 @@ class DeepUNetPaintGenerator(nn.Module):
         return layers
 
     def _down_sample(self):
+        
         layers = nn.ModuleList()
 
         # 256
         layers.append(DeepUNetDownSample(self.dim, self.dim * 2, self.bias))
-
         # 128
-        layers.append(
-            DeepUNetDownSample(self.dim * 2, self.dim * 4, self.bias))
-
+        layers.append(DeepUNetDownSample(self.dim * 2, self.dim * 4, self.bias))
         # 64
-        layers.append(
-            DeepUNetDownSample(self.dim * 4, self.dim * 8, self.bias))
-
+        layers.append(DeepUNetDownSample(self.dim * 4, self.dim * 8, self.bias))
         # 32
-        layers.append(
-            DeepUNetDownSample(self.dim * 8, self.dim * 8, self.bias))
-
+        layers.append(DeepUNetDownSample(self.dim * 8, self.dim * 8, self.bias))
         # 16
-        layers.append(
-            DeepUNetDownSample(self.dim * 8, self.dim * 8, self.bias))
-
+        layers.append(DeepUNetDownSample(self.dim * 8, self.dim * 8, self.bias))
         # 8
-        layers.append(
-            DeepUNetDownSample(self.dim * 8, self.dim * 8, self.bias))
+        layers.append(DeepUNetDownSample(self.dim * 8, self.dim * 8, self.bias))
 
         return layers
 
     def _up_sample(self):
+        
         layers = nn.ModuleList()
-        layers.append(
-            DeepUNetUpSample(self.dim * 8 * 2, self.dim * 8, self.bias, True))
-        layers.append(
-            DeepUNetUpSample(self.dim * 8 * 2, self.dim * 8, self.bias, True))
-        layers.append(
-            DeepUNetUpSample(self.dim * 8 * 2, self.dim * 8, self.bias, True))
-        layers.append(
-            DeepUNetUpSample(self.dim * 8 * 2, self.dim * 4, self.bias))
-        layers.append(
-            DeepUNetUpSample(self.dim * 4 * 2, self.dim * 2, self.bias))
+        layers.append(DeepUNetUpSample(self.dim * 8 * 2, self.dim * 8, self.bias, True))
+        layers.append(DeepUNetUpSample(self.dim * 8 * 2, self.dim * 8, self.bias, True))
+        layers.append(DeepUNetUpSample(self.dim * 8 * 2, self.dim * 8, self.bias, True))
+        layers.append(DeepUNetUpSample(self.dim * 8 * 2, self.dim * 4, self.bias))
+        layers.append(DeepUNetUpSample(self.dim * 4 * 2, self.dim * 2, self.bias))
         layers.append(DeepUNetUpSample(self.dim * 2 * 2, self.dim, self.bias))
+        
         return layers
 
 

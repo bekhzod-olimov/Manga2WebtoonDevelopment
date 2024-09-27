@@ -1,7 +1,5 @@
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-
+# Import libraries
+import torch, torch.nn as nn, torch.nn.functional as F
 
 class AttentionBlock(nn.Module):
     def __init__(self,
@@ -65,8 +63,6 @@ class AttentionBlock(nn.Module):
         skip = torch.randn(1, 32, 16, 16)
         g = torch.randn(1, 16, 8, 8)
         result = self(skip, g)
-        print(result[0].shape)
-        print(result[1].shape)
         pass
 
     def forward(self, x, g):

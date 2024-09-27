@@ -1,15 +1,10 @@
 # -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-from __future__ import division
-
-import array
-import torch
-from torchvision import transforms
-from collections import namedtuple
+# Import libraries
+from __future__ import unicode_literals; from __future__ import division
+from torchvision import transforms; from collections import namedtuple
 from PIL import Image
+import array, torch, sys
 
-import sys
 if sys.version_info[0] <= 2:
     range = xrange
     ARRAY_DATATYPE = b'l'

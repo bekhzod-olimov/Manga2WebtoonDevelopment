@@ -8,12 +8,10 @@ import array, torch, sys
 if sys.version_info[0] <= 2:
     range = xrange
     ARRAY_DATATYPE = b'l'
-else:
-    ARRAY_DATATYPE = 'l'
+else: ARRAY_DATATYPE = 'l'
 
 Rgb = namedtuple('Rgb', ('r', 'g', 'b'))
 Hsl = namedtuple('Hsl', ('h', 's', 'l'))
-
 
 class Color(object):
     def __init__(self, r, g, b, proportion):
@@ -31,7 +29,6 @@ class Color(object):
         except AttributeError:
             self._hsl = Hsl(*hsl(*self.rgb))
             return self._hsl
-
 
 def extract(f, number_of_colors):
     if isinstance(f, str):
@@ -96,8 +93,8 @@ def sample(image):
             samples[packed + 1] += g
             samples[packed + 2] += b
             samples[packed + 3] += 1
+    
     return samples
-
 
 def pick_used(samples):
     used = []
@@ -106,7 +103,6 @@ def pick_used(samples):
         if count:
             used.append((count, i))
     return used
-
 
 def get_colors(samples, used, number_of_colors):
     pixels = 0
@@ -122,8 +118,8 @@ def get_colors(samples, used, number_of_colors):
         colors.append(color)
     for color in colors:
         color.proportion /= pixels
+    
     return colors
-
 
 def hsl(r, g, b):
     # This looks stupid, but it's way faster than min() and max().
@@ -162,7 +158,6 @@ def hsl(r, g, b):
         h //= 6
 
     return h, s, l
-
 
 # Useful snippet for testing values:
 # print "Pixel #{}".format(str(y * width + x))

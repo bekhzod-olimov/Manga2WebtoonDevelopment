@@ -187,7 +187,6 @@ class DeepUNetUpSample(nn.Module):
 
         feature = feature + self.channel_map(x)
 
-        if self.dropout is not None:
-            feature = self.dropout(feature)
+        if self.dropout: feature = self.dropout(feature)
 
         return feature

@@ -1,11 +1,5 @@
-"""
-PathchGAN implementation on Pytorch
-
-Following paper's implementation, using 70 x 70 patchgan
-"""
-
+# Import library
 import torch.nn as nn
-
 
 class PatchGAN(nn.Module):
     def __init__(self, dim=64, norm='batch', sigmoid=True):

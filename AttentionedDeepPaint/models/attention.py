@@ -5,11 +5,14 @@ class AttentionBlock(nn.Module):
     def __init__(self,
                  in_channels,
                  gate_channels,
-                 inter_channels=None,
-                 bias=True):
+                 inter_channels = None,
+                 bias = True):
         super(AttentionBlock, self).__init__()
+        
         """
+        
         Implementation of Attention block in SegUnet
+        
         """
 
         if inter_channels is None:
@@ -19,10 +22,10 @@ class AttentionBlock(nn.Module):
             nn.Conv2d(
                 in_channels,
                 in_channels,
-                kernel_size=1,
-                stride=1,
-                padding=0,
-                bias=bias),
+                kernel_size = 1,
+                stride = 1,
+                padding = 0,
+                bias = bias),
             nn.BatchNorm2d(in_channels),
         )
 

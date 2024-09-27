@@ -3,8 +3,11 @@ from AttentionedDeepPaint.models.attention import AttentionBlock
 Norm = nn.BatchNorm2d
 
 class DeepUNetPaintGenerator(nn.Module):
+    
     """
+    
     Use Unet & SegNet & Residual Block feature
+    
     """
 
     def __init__(self, bias=True):
@@ -47,7 +50,6 @@ class DeepUNetPaintGenerator(nn.Module):
     def forward(self, image, colors):
         cache = []
         image = torch.cat([image, colors], 1)
-        # print(image.shape)
         image = self.first_layer(image)
 
         for i, layer in enumerate(self.down_sampler):
@@ -69,27 +71,22 @@ class DeepUNetPaintGenerator(nn.Module):
         return image, attentions
 
     def _attention_blocks(self):
+        
         layers = nn.ModuleList()
 
         gate_channels = self.dim * 8
 
-        layers.append(
-            AttentionBlock(self.dim * 8, gate_channels, bias=self.bias))
+        layers.append(AttentionBlock(self.dim * 8, gate_channels, bias=self.bias))
 
-        layers.append(
-            AttentionBlock(self.dim * 8, gate_channels, bias=self.bias))
+        layers.append(AttentionBlock(self.dim * 8, gate_channels, bias=self.bias))
 
-        layers.append(
-            AttentionBlock(self.dim * 8, gate_channels, bias=self.bias))
+        layers.append(AttentionBlock(self.dim * 8, gate_channels, bias=self.bias))
 
-        layers.append(
-            AttentionBlock(self.dim * 8, gate_channels, bias=self.bias))
+        layers.append(AttentionBlock(self.dim * 8, gate_channels, bias=self.bias))
 
-        layers.append(
-            AttentionBlock(self.dim * 4, gate_channels, bias=self.bias))
+        layers.append(AttentionBlock(self.dim * 4, gate_channels, bias=self.bias))
 
-        layers.append(
-            AttentionBlock(self.dim * 2, gate_channels, bias=self.bias))
+        layers.append(AttentionBlock(self.dim * 2, gate_channels, bias=self.bias))
 
         return layers
 

@@ -1,10 +1,5 @@
-"""
-Preprocess train/validation dataset and generate pair image
-"""
-import os
-import glob
-import json
-
+# Import libraries
+import os, glob, json
 from AttentionedDeepPaint.preprocess import scale
 from AttentionedDeepPaint.preprocess import make_colorgram_tensor
 

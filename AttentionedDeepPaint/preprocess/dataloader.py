@@ -9,10 +9,13 @@ from torch.utils.data import Dataset
 class PairedDataset(Dataset):
 
     def __init__(self, root = './data/', mode = 'train', transform = None, color_histogram = False, size = 512):
+        
         """
-        @param root: data root
-        @param mode: set mode (train, test, val)
-        @param transform: Image Processing
+        Parameters:
+        
+        root       -  data root
+        mode       - set mode (train, test, val)
+        transform  -  Image Processing
         @param need_resize: Return 224 resized version of style image
         @param color_histogram: extract color_histogram
         @param size: image crop (or resize) size

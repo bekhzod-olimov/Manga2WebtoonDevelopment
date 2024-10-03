@@ -39,22 +39,10 @@ class PairedDataset(Dataset):
             # no png file, use jpg
             self.image_files = glob.glob(os.path.join(root, '*.jpg'))
 
-    def __len__(self):
-        return len(self.image_files)
+    def __len__(self): return len(self.image_files)
 
     def __getitem__(self, index):
-        """
-        Niko Dataset Get Item
-        @param index: index
-        Returns:
-            if self.color_histogram
-            tuple: (imageA == original, imageB == sketch, colors)
-            else:
-            tuple: (imageA == original, imageB == sketch)
-
-            if self.resize
-            resized image will be appended end of the above tuple
-        """
+        
         try:
             filename = self.image_files[index]
             file_id = filename.split('/')[-1][:-4]

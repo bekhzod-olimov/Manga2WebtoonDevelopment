@@ -13,12 +13,12 @@ class PairedDataset(Dataset):
         """
         Parameters:
         
-        root       -  data root
-        mode       - set mode (train, test, val)
-        transform  -  Image Processing
-        @param need_resize: Return 224 resized version of style image
-        @param color_histogram: extract color_histogram
-        @param size: image crop (or resize) size
+        root             - data root, str;
+        mode             - set mode (train, test, val), str;
+        transform        - image transformations;
+        need_resize      - return 224 resized version of style image
+        color_histogram  - extract color_histogram
+        size             - image crop (or resize) size
         """
         if mode not in {'train', 'val'}:
             raise ValueError('Invalid Dataset. Pick among (train, val)')

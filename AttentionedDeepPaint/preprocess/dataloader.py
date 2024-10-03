@@ -74,18 +74,13 @@ class PairedDataset(Dataset):
             if height_pad < 0: height_pad = 0
                 
             # padding as white
-            padding = transforms.Pad((width_pad // 2, height_pad // 2 + 1,
-                                      width_pad // 2 + 1, height_pad // 2),
-                                     (255, 255, 255))
-
+            padding = transforms.Pad((width_pad // 2, height_pad // 2 + 1, width_pad // 2 + 1, height_pad // 2), (255, 255, 255))
+            
             # use center crop
             crop = transforms.CenterCrop(self.size)
 
-            imageA = padding(imageA)
-            imageA = crop(imageA)
-
-            imageB = padding(imageB)
-            imageB = crop(imageB)
+            imageA = crop(padding(imageA))
+            imageB = crop(padding(imageB))
 
             if self.transform is not None:
                 imageA = self.transform(imageA)

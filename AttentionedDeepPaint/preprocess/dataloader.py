@@ -11,17 +11,19 @@ class PairedDataset(Dataset):
     def __init__(self, root = './data/', mode = 'train', transform = None, color_histogram = False, size = 512):
         
         """
+        
         Parameters:
         
         root             - data root, str;
         mode             - set mode (train, test, val), str;
         transform        - image transformations;
-        need_resize      - return 224 resized version of style image
-        color_histogram  - extract color_histogram
-        size             - image crop (or resize) size
+        need_resize      - return 224 resized version of style image, bool;
+        color_histogram  - extract color_histogram, bool;
+        size             - image crop (or resize) size, int.
+        
         """
-        if mode not in {'train', 'val'}:
-            raise ValueError('Invalid Dataset. Pick among (train, val)')
+        
+        if mode not in {'train', 'val'}: raise ValueError('Invalid Dataset. Pick among (train, val)')
 
         root = os.path.join(root, mode)
         # root = os.path.join(root, 'test')

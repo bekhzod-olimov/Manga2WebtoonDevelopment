@@ -2,25 +2,13 @@
 import os, glob, json
 from AttentionedDeepPaint.preprocess import scale
 from AttentionedDeepPaint.preprocess import make_colorgram_tensor
-
 from PIL import Image
-
 from torchvision import transforms
 from torch.utils.data import Dataset
 
-
 class PairedDataset(Dataset):
-    """
-    Composed of
-    (colorized image, sketch image)
-    """
 
-    def __init__(self,
-                 root='./data/',
-                 mode='train',
-                 transform=None,
-                 color_histogram=False,
-                 size=512):
+    def __init__(self, root = './data/', mode = 'train', transform = None, color_histogram = False, size = 512):
         """
         @param root: data root
         @param mode: set mode (train, test, val)

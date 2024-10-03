@@ -67,14 +67,12 @@ class PairedDataset(Dataset):
 
             # default transforms, pad if needed and center crop 512
             width_pad = self.size - image_width // 2
-            if width_pad < 0:
-                # do not pad
-                width_pad = 0
-
+            # no padding
+            if width_pad < 0: width_pad = 0
+            
             height_pad = self.size - image_height
-            if height_pad < 0:
-                height_pad = 0
-
+            if height_pad < 0: height_pad = 0
+                
             # padding as white
             padding = transforms.Pad((width_pad // 2, height_pad // 2 + 1,
                                       width_pad // 2 + 1, height_pad // 2),

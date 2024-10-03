@@ -36,10 +36,7 @@ class PatchGAN(nn.Module):
             if isinstance(module, nn.Conv2d):
                 nn.init.normal_(module.weight, 0, 0.02)
 
-    def forward(self, image):
-        image = self.layers(image)
-
-        return image
+    def forward(self, image): return self.layers(image)
 
     def _building_block(self, in_channel, out_channel, norm=True, stride=2):
         layers = []

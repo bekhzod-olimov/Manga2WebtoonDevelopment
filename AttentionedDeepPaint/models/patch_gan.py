@@ -4,15 +4,11 @@ import torch.nn as nn
 class PatchGAN(nn.Module):
     def __init__(self, dim=64, norm='batch', sigmoid=True):
         super(PatchGAN, self).__init__()
-        if norm == 'batch':
-            self.norm = nn.BatchNorm2d
-        elif norm == 'instance':
-            self.norm = nn.InstanceNorm2d
-        else:
-            raise ValueError('Invalid Normalization')
+        if norm == 'batch': self.norm = nn.BatchNorm2d
+        elif norm == 'instance': self.norm = nn.InstanceNorm2d
+        else: raise ValueError('Invalid Normalization')
 
         self.dim = dim
-
         layers = nn.ModuleList()
 
         # 256 x 256

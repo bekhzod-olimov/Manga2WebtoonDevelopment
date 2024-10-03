@@ -40,10 +40,8 @@ class PatchGAN(nn.Module):
 
     def _building_block(self, in_channel, out_channel, norm=True, stride=2):
         layers = []
-        layers.append(
-            nn.Conv2d(in_channel, out_channel, 4, stride=stride, padding=1))
-        if norm:
-            layers.append(self.norm(out_channel))
+        layers.append(nn.Conv2d(in_channel, out_channel, 4, stride=stride, padding=1))
+        if norm: layers.append(self.norm(out_channel))
         layers.append(nn.LeakyReLU(0.2, True))
 
         return nn.Sequential(*layers)
